@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Task Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>⚡ Smart Task Analyzer</h1>
+        <p>Prioritize tasks based on Urgency, Importance, and Effort.</p>
+        
+        <div class="grid">
+            <div class="panel">
+                <div class="header">
+                    <h3>Input Tasks</h3>
+                    <button onclick="getSuggestions()" class="btn-text">📅 Get Today's Top 3</button>
+                </div>
+                <p class="hint">Paste JSON array here:</p>
+                <textarea id="jsonInput" placeholder='[{"title": "Fix Bug", "due_date": "2025-11-30", "importance": 10, "estimated_hours": 2}]'></textarea>
+                <button onclick="analyze()" class="btn-primary">Analyze & Save</button>
+                <div id="errorBox" class="error hidden"></div>
+            </div>
+
+            <div class="panel">
+                <div class="header">
+                    <h3>Priority Queue</h3>
+                    <select id="sortStrategy" onchange="resort()">
+                        <option value="smart">🤖 Smart Balance</option>
+                        <option value="deadline">📅 Deadline Driven</option>
+                        <option value="effort">⚡ Fastest Wins</option>
+                        <option value="impact">🔥 High Impact</option>
+                    </select>
+                </div>
+                <div id="resultsList" class="results-container"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
