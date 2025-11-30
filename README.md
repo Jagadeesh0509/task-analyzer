@@ -15,8 +15,8 @@ Follow these steps to run the project on your computer.
    git clone <PASTE_YOUR_GITHUB_URL_HERE>
    cd task-analyzer
 2. Create a virtual environment: Windows
-python -m venv tasks
-venv\Scripts\activate
+   python -m venv tasks
+   source tasks\Scripts\activate
 
 
 3. Setup the Database:
